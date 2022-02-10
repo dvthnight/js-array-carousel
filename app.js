@@ -54,13 +54,11 @@ const fotoPrincipale = document.createElement("img");
 fotoPrincipale.src = items[fotoCorrente];
 contenitorePrincipale.append(fotoPrincipale);
 
-const titoloFoto = document.createElement("h3");
-const paragrafoFoto = document.createElement("p");
-titoloFoto.append(title[fotoCorrente]);
-paragrafoFoto.append(text[fotoCorrente]);
+const titoloFoto = document.getElementById("titolo-foto");
+const paragrafoFoto = document.getElementById("paragrafo-foto");
 
-descrizione.append(titoloFoto);
-descrizione.append(paragrafoFoto);
+titoloFoto.innerHTML = title[fotoCorrente];
+paragrafoFoto.innerHTML = text[fotoCorrente];
 
 
 arrowDown.addEventListener("click", function(){
@@ -68,6 +66,11 @@ arrowDown.addEventListener("click", function(){
         contenitoreAnteprime[fotoCorrente].classList.remove("active");
         fotoCorrente++;
         contenitoreAnteprime[fotoCorrente].classList.add("active");
+   
+        fotoPrincipale.src = items[fotoCorrente];
+        contenitorePrincipale.append(fotoPrincipale);
+        titoloFoto.innerHTML = title[fotoCorrente];
+        paragrafoFoto.innerHTML = text[fotoCorrente];
     }
 })
 
@@ -78,5 +81,10 @@ arrowUp.addEventListener("click", function(){
         contenitoreAnteprime[fotoCorrente].classList.remove("active");
         fotoCorrente--;
         contenitoreAnteprime[fotoCorrente].classList.add("active");
+    
+    fotoPrincipale.src = items[fotoCorrente];
+        contenitorePrincipale.append(fotoPrincipale);
+        titoloFoto.innerHTML = title[fotoCorrente];
+        paragrafoFoto.innerHTML = text[fotoCorrente];
     }
 })
