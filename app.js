@@ -47,6 +47,16 @@ contenitoreAnteprime[fotoCorrente].classList.add("active");
 
 const arrowDown = document.querySelector(".arrow-down");
 
+const contenitorePrincipale = document.getElementById("contenitore-principale");
+const descrizione = document.querySelector(".descrizione");
+
+const fotoPrincipale = document.createElement("img");
+fotoPrincipale.src = items[fotoCorrente];
+contenitorePrincipale.append(fotoPrincipale);
+
+
+
+
 arrowDown.addEventListener("click", function(){
     if(fotoCorrente < items.length -1){
         contenitoreAnteprime[fotoCorrente].classList.remove("active");
