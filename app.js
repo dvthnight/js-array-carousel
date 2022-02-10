@@ -24,17 +24,43 @@ const text = [
 
 
 const anteprime = document.getElementById("anteprime");
-const contenitore_anteprime = [];
+const contenitoreAnteprime = [];
 
-for(i=0; i<items.length; i++){
+for(let i = 0; i < items.length; i++){
     const anteprima = document.createElement("figure");
     const anteprimaImg = document.createElement("img");
     
     anteprimaImg.src = items[i];
     anteprima.append(anteprimaImg);
-    console.dir(anteprimaImg);
+    // console.dir(anteprimaImg);
 
-    contenitore_anteprime.push(anteprima);
+    contenitoreAnteprime.push(anteprima);
     anteprime.append(anteprima);
 
 }
+console.log(contenitoreAnteprime)
+
+
+let fotoCorrente = 0;
+
+contenitoreAnteprime[fotoCorrente].classList.add("active");
+
+const arrowDown = document.querySelector(".arrow-down");
+
+arrowDown.addEventListener("click", function(){
+    if(fotoCorrente < items.length -1){
+        contenitoreAnteprime[fotoCorrente].classList.remove("active");
+        fotoCorrente++;
+        contenitoreAnteprime[fotoCorrente].classList.add("active");
+    }
+})
+
+const arrowUp = document.querySelector(".arrow-up");
+
+arrowUp.addEventListener("click", function(){
+    if(fotoCorrente>0){
+        contenitoreAnteprime[fotoCorrente].classList.remove("active");
+        fotoCorrente--;
+        contenitoreAnteprime[fotoCorrente].classList.add("active");
+    }
+})
