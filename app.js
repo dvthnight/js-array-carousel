@@ -26,6 +26,8 @@ const text = [
 const anteprime = document.getElementById("anteprime");
 const contenitoreAnteprime = [];
 
+let fotoCorrente = 0;
+
 for(let i = 0; i < items.length; i++){
     const anteprima = document.createElement("figure");
     const anteprimaImg = document.createElement("img");
@@ -37,11 +39,26 @@ for(let i = 0; i < items.length; i++){
     contenitoreAnteprime.push(anteprima);
     anteprime.append(anteprima);
 
+
+
+    anteprima.addEventListener("click", function(){
+        
+        contenitoreAnteprime[fotoCorrente].classList.remove("active");
+        fotoCorrente = i;
+        contenitoreAnteprime[fotoCorrente].classList.add("active");
+
+        fotoPrincipale.src = items[fotoCorrente];
+        contenitorePrincipale.append(fotoPrincipale);
+        titoloFoto.innerHTML = title[fotoCorrente];
+        paragrafoFoto.innerHTML = text[fotoCorrente];
+
+    })
+
 }
 console.log(contenitoreAnteprime)
 
 
-let fotoCorrente = 0;
+
 
 contenitoreAnteprime[fotoCorrente].classList.add("active");
 
@@ -82,7 +99,7 @@ arrowUp.addEventListener("click", function(){
         fotoCorrente--;
         contenitoreAnteprime[fotoCorrente].classList.add("active");
     
-    fotoPrincipale.src = items[fotoCorrente];
+        fotoPrincipale.src = items[fotoCorrente];
         contenitorePrincipale.append(fotoPrincipale);
         titoloFoto.innerHTML = title[fotoCorrente];
         paragrafoFoto.innerHTML = text[fotoCorrente];
