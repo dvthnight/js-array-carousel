@@ -37,6 +37,19 @@ img{
 
 figure{
     height: 70px;
+    position: relative;
+}
+
+figure::after{
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: black;
+    opacity: 0.4;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
 }
 
 figure img{
@@ -70,4 +83,12 @@ figure img{
 
 .arrow-down{
     bottom: 10px;
+}
+
+ .active::after{
+    opacity: 0;
+}
+
+.active{
+    border: 2px solid white;
 }
