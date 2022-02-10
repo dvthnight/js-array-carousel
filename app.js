@@ -54,7 +54,13 @@ const fotoPrincipale = document.createElement("img");
 fotoPrincipale.src = items[fotoCorrente];
 contenitorePrincipale.append(fotoPrincipale);
 
+const titoloFoto = document.createElement("h3");
+const paragrafoFoto = document.createElement("p");
+titoloFoto.append(title[fotoCorrente]);
+paragrafoFoto.append(text[fotoCorrente]);
 
+descrizione.append(titoloFoto);
+descrizione.append(paragrafoFoto);
 
 
 arrowDown.addEventListener("click", function(){
