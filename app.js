@@ -42,7 +42,7 @@ for(let i = 0; i < items.length; i++){
 
 
     anteprima.addEventListener("click", function(){
-        
+
         contenitoreAnteprime[fotoCorrente].classList.remove("active");
         fotoCorrente = i;
         contenitoreAnteprime[fotoCorrente].classList.add("active");
@@ -88,6 +88,16 @@ arrowDown.addEventListener("click", function(){
         contenitorePrincipale.append(fotoPrincipale);
         titoloFoto.innerHTML = title[fotoCorrente];
         paragrafoFoto.innerHTML = text[fotoCorrente];
+    } else{
+        
+        contenitoreAnteprime[fotoCorrente].classList.remove("active");
+        fotoCorrente = 0;
+        contenitoreAnteprime[fotoCorrente].classList.add("active");
+   
+        fotoPrincipale.src = items[fotoCorrente];
+        contenitorePrincipale.append(fotoPrincipale);
+        titoloFoto.innerHTML = title[fotoCorrente];
+        paragrafoFoto.innerHTML = text[fotoCorrente];
     }
 })
 
@@ -97,6 +107,15 @@ arrowUp.addEventListener("click", function(){
     if(fotoCorrente>0){
         contenitoreAnteprime[fotoCorrente].classList.remove("active");
         fotoCorrente--;
+        contenitoreAnteprime[fotoCorrente].classList.add("active");
+    
+        fotoPrincipale.src = items[fotoCorrente];
+        contenitorePrincipale.append(fotoPrincipale);
+        titoloFoto.innerHTML = title[fotoCorrente];
+        paragrafoFoto.innerHTML = text[fotoCorrente];
+    }else{
+        contenitoreAnteprime[fotoCorrente].classList.remove("active");
+        fotoCorrente = items.length-1;
         contenitoreAnteprime[fotoCorrente].classList.add("active");
     
         fotoPrincipale.src = items[fotoCorrente];
