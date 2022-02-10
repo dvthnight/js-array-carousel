@@ -21,3 +21,20 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
+
+
+const anteprime = document.getElementById("anteprime");
+const contenitore_anteprime = [];
+
+for(i=0; i<items.length; i++){
+    const anteprima = document.createElement("figure");
+    const anteprimaImg = document.createElement("img");
+    
+    anteprimaImg.src = items[i];
+    anteprima.append(anteprimaImg);
+    console.dir(anteprimaImg);
+
+    contenitore_anteprime.push(anteprima);
+    anteprime.append(anteprima);
+
+}
